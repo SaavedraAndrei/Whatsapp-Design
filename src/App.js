@@ -1,14 +1,21 @@
 import "./App.css";
 import Sidebar from "./Sidebar";
 import Chat from "./Chat";
+import Login from "./Login";
 
 function App() {
+  const user = null;
+
   return (
     <div className="app">
-      <div className="app__body">
-        <Sidebar />
-        <Chat />
-      </div>
+      {!user ? (
+        <Login />
+      ) : (
+        <div className="app__body">
+          <Sidebar />
+          <Chat />
+        </div>
+      )}
     </div>
   );
 }
